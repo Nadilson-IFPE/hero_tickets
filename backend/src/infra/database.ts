@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const url = 'YOUR_MONGODB_URL_HERE';
+const url = 'mongodb+srv://nadilson:Qhja7oqUWRBoJ3pg@cluster0.2jroq7s.mongodb.net/hero-tickets';
 
 export async function connect() {
 
