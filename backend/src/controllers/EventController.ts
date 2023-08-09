@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { EventUseCase } from "../useCases/EventUseCase";
+import { Event } from "../entities/Event";
 
 class EventController {
 
@@ -8,7 +9,7 @@ class EventController {
     }
 
     async create(request: Request, response: Response, next: NextFunction) {
-        const eventData = request.body;
+        const eventData: Event = request.body;
 
         try {
             await this.eventUseCase.create(eventData);
