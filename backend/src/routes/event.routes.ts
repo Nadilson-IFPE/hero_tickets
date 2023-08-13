@@ -30,7 +30,28 @@ class EventRoutes {
                     maxCount: 3,
                 },
             ]),
-            this.eventController.create.bind(this.eventController));
+            this.eventController.create.bind(this.eventController)
+        );
+
+        this.router.get(
+            '/',
+            this.eventController.findEventByLocation.bind(this.eventController),
+        );
+
+        this.router.get(
+            '/:id',
+            this.eventController.findEventsById.bind(this.eventController),
+        );
+
+        this.router.get(
+            '/category/:category',
+            this.eventController.findEventsByCategory.bind(this.eventController),
+        );
+
+        this.router.post(
+            '/:id/participants',
+            this.eventController.addParticipant.bind(this.eventController),
+        );
     }
 }
 
